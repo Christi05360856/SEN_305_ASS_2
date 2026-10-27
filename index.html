@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnHub | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- SIDEBAR: navigation menu on the left -->
+    <aside class="sidebar">
+      <a href="#" class="logo">LearnHub</a>
+
+      <nav aria-label="Dashboard navigation">
+        <ul>
+          <li><a href="#overview" aria-current="page">Dashboard</a></li>
+          <li><a href="#lesson">Continue Learning</a></li>
+          <li><a href="#courses">My Courses</a></li>
+          <li><a href="#">Browse Courses</a></li>
+          <li><a href="#">Certificates</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </nav>
+
+      <!-- Student box at the bottom of the sidebar -->
+      <section class="student">
+        <p><strong>Ada Okafor</strong></p>
+        <p><small>Student</small></p>
+      </section>
+    </aside>
+
+    <!-- MAIN: everything on the right -->
+    <main>
+
+      <!-- Top bar: greeting and search -->
+      <header class="topbar" id="overview">
+        <div>
+          <h1>Welcome back, Ada</h1>
+          <p class="muted">Pick up where you left off.</p>
+        </div>
+        <form action="#" method="get" role="search">
+          <label for="search" class="hidden">Search courses</label>
+          <input type="search" id="search" name="search" placeholder="Search courses...">
+        </form>
+      </header>
+
+      <!-- Quick stats -->
+      <section class="stats" aria-label="Your stats">
+        <article class="card">
+          <h2>Courses Enrolled</h2>
+          <p class="big">4</p>
+        </article>
+        <article class="card">
+          <h2>Hours Learned</h2>
+          <p class="big">32</p>
+        </article>
+        <article class="card">
+          <h2>Certificates</h2>
+          <p class="big">1</p>
+        </article>
+      </section>
+
+      <!-- VIDEO LESSON AREA -->
+      <section id="lesson" class="lesson-layout">
+
+        <!-- Left: the video player and lesson details -->
+        <article class="card">
+          <p class="muted">Web Design Basics &middot; Lesson 4 of 10</p>
+          <h2>Lesson 4: Styling with CSS</h2>
+
+          <!-- The video player (replace the src with your own video file) -->
+          <video controls width="640" poster="">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <p>
+            In this lesson you will learn how CSS changes the colours,
+            fonts and layout of a web page.
+          </p>
+
+          <!-- Previous / Next buttons -->
+          <div class="button-row">
+            <button type="button" class="btn btn-outline">&larr; Previous</button>
+            <button type="button" class="btn">Next Lesson &rarr;</button>
+          </div>
+
+          <!-- Click-to-open notes -->
+          <details>
+            <summary>Lesson Notes</summary>
+            <p>CSS stands for Cascading Style Sheets. It is linked to HTML using the link tag.</p>
+          </details>
+          <details>
+            <summary>Downloads</summary>
+            <p><a href="#">lesson-4-slides.pdf</a></p>
+          </details>
+        </article>
+
+        <!-- Right: list of all lessons in this course -->
+        <aside class="card">
+          <h2>Course Content</h2>
+          <ol class="lesson-list">
+            <li class="done">1. Introduction</li>
+            <li class="done">2. What is HTML?</li>
+            <li class="done">3. Page Structure</li>
+            <li class="current">4. Styling with CSS</li>
+            <li>5. Colours and Fonts</li>
+            <li>6. Layout Basics</li>
+            <li>7. Forms</li>
+            <li>8. Responsive Design</li>
+            <li>9. Final Project</li>
+            <li>10. Wrap Up</li>
+          </ol>
+        </aside>
+
+      </section>
+
+      <!-- COURSE PROGRESS TRACKERS -->
+      <section id="courses">
+        <h2 class="section-title">My Courses</h2>
+
+        <div class="course-grid">
+
+          <article class="card">
+            <h3>Web Design Basics</h3>
+            <p class="muted">Instructor: Mr. Bello</p>
+            <label for="p1">Progress: 40%</label>
+            <progress id="p1" value="40" max="100">40%</progress>
+            <a href="#lesson" class="btn">Continue</a>
+          </article>
+
+          <article class="card">
+            <h3>Intro to Python</h3>
+            <p class="muted">Instructor: Mrs. Eze</p>
+            <label for="p2">Progress: 75%</label>
+            <progress id="p2" value="75" max="100">75%</progress>
+            <a href="#lesson" class="btn">Continue</a>
+          </article>
+
+          <article class="card">
+            <h3>Digital Marketing</h3>
+            <p class="muted">Instructor: Mr. Adeyemi</p>
+            <label for="p3">Progress: 100%</label>
+            <progress id="p3" value="100" max="100">100%</progress>
+            <a href="#" class="btn btn-outline">View Certificate</a>
+          </article>
+
+          <article class="card">
+            <h3>Data Analysis</h3>
+            <p class="muted">Instructor: Dr. Musa</p>
+            <label for="p4">Progress: 10%</label>
+            <progress id="p4" value="10" max="100">10%</progress>
+            <a href="#lesson" class="btn">Continue</a>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p><small>&copy; 2026 LearnHub. All rights reserved.</small></p>
+  </footer>
+
+</body>
+</html>
