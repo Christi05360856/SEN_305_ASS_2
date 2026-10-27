@@ -1,0 +1,289 @@
+/* ============================================
+   LearnHub Dashboard - style.css
+   ============================================ */
+
+/* 1. COLOURS (change here and the whole page changes) */
+:root {
+  --ink: #1b1f2a;       /* dark sidebar and text */
+  --paper: #f4f5f8;     /* page background */
+  --accent: #4f46e5;    /* indigo accent colour */
+  --line: #e2e4ea;      /* thin borders */
+  --muted: #6b7080;     /* grey text */
+}
+
+/* 2. RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Hides a label visually but keeps it for screen readers */
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+/* 3. PAGE LAYOUT: sidebar (240px) + main area */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+/* 4. SIDEBAR */
+.sidebar {
+  background: var(--ink);
+  color: #cfd2dc;
+  padding: 1.5rem;
+  position: sticky;   /* stays in view while you scroll */
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.sidebar nav a {
+  display: block;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar nav a:hover {
+  background: #2b3040;
+  color: white;
+}
+
+.sidebar nav a[aria-current="page"] {
+  background: var(--accent);
+  color: white;
+}
+
+.student {
+  margin-top: auto;   /* pushes this box to the bottom */
+  padding-top: 1rem;
+  border-top: 1px solid #333a4d;
+}
+
+/* 5. MAIN AREA */
+main {
+  padding: 2rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.topbar h1 {
+  font-size: 1.8rem;
+}
+
+/* 6. FORMS AND BUTTONS */
+input[type="search"] {
+  width: 260px;
+  max-width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+}
+
+.button-row {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+/* 7. CARDS (white boxes used everywhere) */
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* 8. STATS ROW */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stats h2 {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.big {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* 9. VIDEO LESSON AREA */
+.lesson-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+video {
+  width: 100%;
+  border-radius: 8px;
+  background: black;
+  margin: 1rem 0;
+}
+
+details {
+  border-top: 1px solid var(--line);
+  padding: 0.8rem 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+details p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+/* Lesson list on the right */
+.lesson-list li {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  color: var(--muted);
+}
+
+.lesson-list .done {
+  color: var(--ink);
+}
+
+.lesson-list .done::after {
+  content: " ✓";
+  color: #16a34a;
+}
+
+.lesson-list .current {
+  background: #eef0ff;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* 10. COURSE PROGRESS CARDS */
+.section-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.course-grid h3 {
+  font-size: 1.1rem;
+}
+
+.course-grid label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* The progress bar */
+progress {
+  width: 100%;
+  height: 10px;
+  margin: 0.4rem 0 1rem;
+  accent-color: var(--accent);
+}
+
+/* 11. FOOTER */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+/* 12. RESPONSIVE: below 900px everything stacks in one column */
+@media (max-width: 900px) {
+  .layout,
+  .lesson-layout,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+
+  .student {
+    display: none;
+  }
+}
